@@ -1,0 +1,53 @@
+/* Custom fixes for alignment issues */
+
+/* Center the text-theme spans in section headings */
+h6 span.text-theme {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+/* Fix for section heading alignment */
+.section-heading h6 {
+    text-align: center;
+    width: 100%;
+    order: 2; /* Move h6 after h3 in the flex container */
+    margin-top: 10px; /* Add space between h3 and h6 */
+    margin-bottom: 15px;
+}
+
+/* Ensure the text-theme gradient is properly centered */
+.text-theme {
+    display: inline-block;
+    text-align: center;
+    margin: 0 auto;
+}
+
+/* Make section heading a flex container with column direction */
+.section-heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
+    text-align: center; /* Ensure text is centered */
+}
+
+/* Position the main heading (h3) before the label (h6) */
+.section-heading h3 {
+    order: 1;
+    margin-bottom: 5px;
+    text-align: center; /* Ensure heading is centered */
+}
+
+/* Center all text in the section heading div */
+.section-heading div {
+    text-align: center;
+    width: 100%;
+}
+
+/* Ensure paragraphs in section headings are centered */
+.section-heading p {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+} 

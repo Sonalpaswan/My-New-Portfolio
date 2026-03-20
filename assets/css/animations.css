@@ -1,0 +1,586 @@
+/* Animations CSS for Ayush's Portfolio */
+
+/* Fade-in animation for sections */
+.fade-in {
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Typing cursor animation */
+.typed-cursor {
+    font-size: 1em;
+    color: #f64f59;
+    opacity: 1;
+    animation: blink 0.7s infinite;
+    margin-left: 2px;
+    position: relative;
+    display: inline;
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Typing container styling */
+.typing-container {
+    position: relative;
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.typing-container h2 {
+    margin: 0;
+    line-height: 1.2;
+}
+
+.typing-line {
+    display: flex !important;
+    align-items: center;
+    min-height: 1.2em;
+    white-space: nowrap;
+    font-size: 0.75em;
+}
+
+.typing-container::before {
+    content: '';
+    position: absolute;
+    left: -10px;
+    top: -10px;
+    width: 30px;
+    height: 30px;
+    border-top: 3px solid #12c2e9;
+    border-left: 3px solid #12c2e9;
+    opacity: 0.7;
+}
+
+.typing-container::after {
+    content: '';
+    position: absolute;
+    right: -10px;
+    bottom: -10px;
+    width: 30px;
+    height: 30px;
+    border-bottom: 3px solid #f64f59;
+    border-right: 3px solid #f64f59;
+    opacity: 0.7;
+}
+
+/* Enhanced typing text styles */
+#typing-text {
+    position: relative;
+    color: transparent;
+    background: linear-gradient(45deg, #12c2e9, #c471ed, #f64f59);
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    animation: gradientText 5s ease infinite;
+    font-weight: 700;
+    display: inline;
+    line-height: 1.2;
+    font-size: 0.75em;
+}
+
+/* Remove any existing cursor styles that might interfere */
+.typed-element {
+    display: inline;
+}
+
+.typed-text-wrap {
+    display: inline !important;
+}
+
+@keyframes gradientText {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Typing animation fade effects */
+.typed-fade-out {
+    opacity: 0;
+    transition: opacity 0.25s;
+}
+
+/* Typing active state */
+.typing-active {
+    position: relative;
+}
+
+.typing-active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #12c2e9, #c471ed, #f64f59, transparent);
+    animation: typingLine 2s ease-in-out infinite;
+}
+
+@keyframes typingLine {
+    0% {
+        background-position: -100% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+/* Typing complete state */
+.typing-complete {
+    transition: all 0.3s ease;
+}
+
+.typing-complete:hover #typing-text {
+    transform: translateY(-3px);
+    text-shadow: 0 5px 15px rgba(18, 194, 233, 0.4);
+}
+
+/* Skill progress bars */
+.skill-progress {
+    margin-bottom: 25px;
+}
+
+.skill-progress h6 {
+    font-size: 15px;
+    margin-bottom: 10px;
+    font-weight: 500;
+    color: #fff;
+}
+
+.white-theme .skill-progress h6 {
+    color: #292929;
+}
+
+.skill-progress .progress {
+    height: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    overflow: visible;
+    border-radius: 10px;
+}
+
+.white-theme .skill-progress .progress {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.skill-progress .progress-bar {
+    background-color: #12c2e9;
+    background-image: linear-gradient(to right, #12c2e9, #c471ed, #f64f59);
+    position: relative;
+    border-radius: 10px;
+    width: 0;
+}
+
+.skill-progress .progress-value {
+    position: absolute;
+    top: -25px;
+    right: 0;
+    color: #fff;
+    font-size: 14px;
+    display: none;
+}
+
+.white-theme .skill-progress .progress-value {
+    color: #292929;
+    display: none;
+}
+
+/* Floating animation for images */
+.float-animation {
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* Make profile picture round with enhanced neon light effect */
+.home-image img {
+    border-radius: 50%;
+    margin-top: -10px;
+    box-shadow: 0 0 20px 5px rgba(18, 194, 233, 0.7), 0 0 40px 10px rgba(196, 113, 237, 0.5), 0 0 60px 15px rgba(246, 79, 89, 0.3);
+}
+
+/* Particles container */
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+/* Parallax scene */
+.parallax-scene {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.parallax-layer {
+    position: absolute;
+}
+
+.layer-1 {
+    top: 10%;
+    left: 10%;
+}
+
+.layer-2 {
+    bottom: 20%;
+    right: 10%;
+}
+
+.layer-3 {
+    top: 50%;
+    left: 50%;
+}
+
+/* Hover effects for project cards */
+.work-box {
+    transition: all 0.3s ease;
+}
+
+.work-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 22px 43px rgba(0, 0, 0, 0.15);
+}
+
+/* Button hover effects */
+.btn-theme {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: all 0.5s ease;
+}
+
+.btn-theme:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    transition: all 0.5s ease;
+    z-index: -1;
+}
+
+.btn-theme:hover:before {
+    width: 100%;
+}
+
+/* Social icons hover effect */
+.social-icons a {
+    transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+    transform: translateY(-5px);
+}
+
+/* Animated background gradient */
+.animated-gradient {
+    background: linear-gradient(-45deg, #12c2e9, #c471ed, #f64f59, #12c2e9);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Reveal animation for text */
+.reveal-text {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.reveal-text:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #12c2e9;
+    animation: revealText 1.5s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+}
+
+@keyframes revealText {
+    0% {
+        width: 100%;
+    }
+    100% {
+        width: 0;
+    }
+}
+
+/* Pulse animation for highlights */
+.pulse {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(18, 194, 233, 0.7);
+    }
+    70% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 10px rgba(18, 194, 233, 0);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(18, 194, 233, 0);
+    }
+}
+
+/* Shapes for parallax effect */
+.shape {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.3;
+    z-index: -1;
+}
+
+.shape-1 {
+    width: 300px;
+    height: 300px;
+    background: #12c2e9;
+}
+
+.shape-2 {
+    width: 200px;
+    height: 200px;
+    background: #c471ed;
+}
+
+.shape-3 {
+    width: 150px;
+    height: 150px;
+    background: #f64f59;
+}
+
+/* Cursor animation */
+.custom-cursor {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: rgba(18, 194, 233, 0.5);
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s ease, width 0.3s ease, height 0.3s ease, background 0.3s ease;
+}
+
+.custom-cursor.active {
+    width: 50px;
+    height: 50px;
+    background: rgba(18, 194, 233, 0.2);
+}
+
+/* Highlight animation for certificates */
+.certificate-highlight {
+    position: relative;
+    overflow: hidden;
+}
+
+.certificate-highlight:before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%);
+    transform: rotate(30deg);
+    animation: certificateShine 3s infinite;
+}
+
+@keyframes certificateShine {
+    0% {
+        transform: rotate(30deg) translate(-100%, -100%);
+    }
+    100% {
+        transform: rotate(30deg) translate(100%, 100%);
+    }
+}
+
+/* 3D card effect */
+.card-3d {
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+.card-3d-inner {
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.card-3d:hover .card-3d-inner {
+    transform: rotateY(10deg) rotateX(5deg);
+}
+
+/* Animated background for sections */
+.animated-bg {
+    position: relative;
+    overflow: hidden;
+}
+
+.animated-bg:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(18, 194, 233, 0.1) 0%, transparent 70%);
+    z-index: -1;
+    animation: pulseBackground 8s infinite alternate;
+}
+
+@keyframes pulseBackground {
+    0% {
+        transform: scale(1);
+        opacity: 0.1;
+    }
+    100% {
+        transform: scale(1.5);
+        opacity: 0.2;
+    }
+}
+
+/* Center contact section items */
+.contact-info {
+    text-align: center;
+}
+
+.contact-info .icon {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.contact-info h5 {
+    margin-bottom: 10px;
+}
+
+.contact-info p {
+    margin: 0 auto;
+}
+
+/* Animated underline for links */
+.animated-underline {
+    position: relative;
+    display: inline-block;
+}
+
+.animated-underline:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background: linear-gradient(to right, #12c2e9, #c471ed, #f64f59);
+    transition: width 0.3s ease;
+}
+
+.animated-underline:hover:after {
+    width: 100%;
+}
+
+/* Text logo styling */
+.navbar-brand span {
+    background: linear-gradient(45deg, #12c2e9, #c471ed, #f64f59);
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent !important;
+    animation: gradientText 5s ease infinite;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Scroll indicator - disabled */
+/*
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 50px;
+    border: 2px solid #fff;
+    border-radius: 15px;
+}
+
+.scroll-indicator:before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    width: 6px;
+    height: 6px;
+    margin-left: -3px;
+    background-color: #fff;
+    border-radius: 50%;
+    animation: scrollIndicator 2s infinite;
+}
+
+@keyframes scrollIndicator {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(15px);
+        opacity: 0;
+    }
+}
+*/ 
