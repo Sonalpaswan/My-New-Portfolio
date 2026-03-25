@@ -1199,3 +1199,12 @@ main {
   .white-theme .google-map {
     border: 1px solid rgba(41, 41, 41, 0.1);
     background: rgba(255, 255, 255, 0.4); }
+.btn-theme {
+  background: linear-gradient(45deg, #6c63ff, #ff6584);
+  color: white;
+  padding: 12px 25px;
+  border-radius: 8px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
