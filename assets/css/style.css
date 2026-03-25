@@ -1208,3 +1208,20 @@ main {
   font-size: 16px;
   cursor: pointer;
 }
+.owl-carousel .work-info a {
+  position: relative;
+  z-index: 9999;
+}
+/* Fix for clickable links inside carousel */
+.owl-carousel {
+  pointer-events: auto;
+}
+.work-info {
+  position: relative;
+  z-index: 10;
+}
+
+.work-info a {
+  position: relative;
+  z-index: 20;
+}
